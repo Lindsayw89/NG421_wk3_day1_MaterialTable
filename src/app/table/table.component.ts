@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {IBobsBurgersCharacters} from '../interfaces/ibobs-burgers-characters'
 import {BobsBurgersService} from '../services/bobs-burgers.service';
-import {MatTableModule} from '@angular/material';
+import {MatTableModule, MatSort, MatTableDataSource} from '@angular/material';
+import {MatSortModule} from '@angular/material/sort';
 
 @Component({
   selector: 'app-table',
@@ -9,16 +10,17 @@ import {MatTableModule} from '@angular/material';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-
   displayedColumns: string[] = ['Name', 'Age', 'Clothing'];
-
-  
+  datasource = new MatTableDataSource(this.bobsBurgersService.CHARACTER_DATA); //
+  @ViewChild(MatSort , {static: false}) sort : MatSort; //
 
 
   constructor(private bobsBurgersService : BobsBurgersService) { }
  
   dataSource = this.bobsBurgersService.CHARACTER_DATA;
   ngOnInit() {
+    this.datasource.sort= this.sort; //
   }
+
 
 }

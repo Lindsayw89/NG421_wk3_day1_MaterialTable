@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
+import {MatSortModule} from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { TableComponent } from './table/table.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatTableModule
+    BrowserAnimationsModule, MatTableModule, MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
