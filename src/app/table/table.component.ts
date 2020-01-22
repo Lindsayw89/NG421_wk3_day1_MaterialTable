@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {IBobsBurgersCharacters} from '../interfaces/ibobs-burgers-characters'
 import {BobsBurgersService} from '../services/bobs-burgers.service';
-import {MatTableModule, MatSort, MatTableDataSource} from '@angular/material';
-import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule, MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-table',
