@@ -16,9 +16,13 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort , {static: true}) sort : MatSort; //
   constructor(private bobsBurgersService : BobsBurgersService) { }
  
+
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.bobsBurgersService.CHARACTER_DATA);
     this.dataSource.sort= this.sort; //
   }
+  applyFilter(filterValue: string){
+    this.dataSource.filter=filterValue.trim().toLocaleLowerCase();
 
+}
 }

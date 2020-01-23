@@ -1,4 +1,8 @@
 
+
+<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+
+
 <table  mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
